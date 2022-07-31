@@ -23,7 +23,7 @@ public class GravelEvent {
                 Block b = event.entityPlayer.worldObj.getBlock(pos.blockX, pos.blockY, pos.blockZ);
                 if (Item.getItemFromBlock(b) == Item.getItemFromBlock(Blocks.gravel)) {
                     if (new Random().nextInt(10) == 1) {
-                        event.entityPlayer.worldObj.func_147480_a(pos.blockX, pos.blockY, pos.blockZ, false);
+                        event.entityPlayer.worldObj.setBlock(pos.blockX, pos.blockY, pos.blockZ, Blocks.air,0,3);
                         EntityItem item = new EntityItem(
                                 event.entityPlayer.worldObj,
                                 pos.blockX,
