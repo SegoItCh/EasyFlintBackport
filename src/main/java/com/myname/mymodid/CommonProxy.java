@@ -1,6 +1,7 @@
 package com.myname.mymodid;
 
 import cpw.mods.fml.common.event.*;
+import net.minecraftforge.common.MinecraftForge;
 
 public class CommonProxy {
 
@@ -14,7 +15,9 @@ public class CommonProxy {
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
-    public void init(FMLInitializationEvent event) {}
+    public void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(new GravelEvent());
+    }
 
     // postInit "Handle interaction with other mods, complete your setup based on this."
     public void postInit(FMLPostInitializationEvent event) {}
